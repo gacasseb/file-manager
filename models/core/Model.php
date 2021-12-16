@@ -58,13 +58,16 @@ abstract class Model extends Filer {
     // Atualiza o arquivo
     public function update()
     {
-        // Encontra a linha do cadastro pelo id
-        // Remove a linha
-        // Salva a nova linha
-        $this->find();
+        $oldRow = $this->findOnFile('id', $this->id);
+
+        $values = $this->getValues();
+        $newRow = FileParser::encode($values);
+        
+        $this->updateOnFile($oldRow, $newRow);
     }
 
     // Remove do arquivo
+    
     public function delete()
     {
         //Encontra a linha do cadastro no arquivo pelo id

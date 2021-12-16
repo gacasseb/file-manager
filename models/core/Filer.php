@@ -50,11 +50,12 @@ abstract class Filer {
         fwrite($this->file, $row);
     }
 
-    public function updateOnFile()
+    public function updateOnFile($oldRow, $newRow)
     {
-        // Encontra a linha do registro no arquivo
-        // Remove a linha do registro
-        // Salva novo cadastro na linha do registro removido
+        $contents = file_get_contents($this->getFilePath());
+        $contents = str_replace($oldRow, $newRow, $contents);
+        
+        file_put_contents($this->getFilePath(), $contents);
     }
 
     public function deleteOnFile($attribute, $value)
