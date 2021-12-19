@@ -1,8 +1,0 @@
-1,Luccas,Casseb
-2,Dieniffer,Borstel
-3,Gabriel,Casseb
-4,Vinicius,Casseb
-5,Felippe,Casseb
-6,Margareth,Casseb
-7,Jéssica,Casseb
-8,Mavi,Casseb
